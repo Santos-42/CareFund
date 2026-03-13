@@ -31,7 +31,7 @@ export async function POST(req: Request) {
     // We will check for generic success status or specific event types if needed.
     // The transaction ID from Mayar is in payload.data.id
 
-    const mayarTrxId = payload?.data?.id;
+    const mayarTrxId = payload?.data?.productId;
     const isSuccessEvent = payload?.event === 'payment.received' || payload?.data?.status?.toLowerCase() === 'paid' || payload?.data?.status === true;
 
     if (mayarTrxId && isSuccessEvent) {
