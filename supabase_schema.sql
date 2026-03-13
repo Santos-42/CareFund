@@ -35,3 +35,32 @@ USING (status = 'success');
 
 -- No public inserts/updates/deletes
 -- (Backend will use Service Role Key to bypass RLS for writes)
+
+-- Function to handle successful donation atomically
+CREATE OR REPLACE FUNCTION handle_successful_donation(p_donation_id UUID)
+RETURNS VOID AS $$
+DECLARE
+    v_campaign_id UUID;
+    v_amount NUMERIC;
+    v_status TEXT;
+BEGIN
+    -- Get donation details and lock the row
+    SELECT campaign_id, amount, status INTO v_campaign_id, v_amount, v_status
+    FROM donations
+    WHERE id = p_donation_id
+    FOR UPDATE;
+
+    -- Only process if status is pending
+    IF v_status = 'pending' THEN
+        -- Update donation status
+        UPDATE donations
+        SET status = 'success'
+        WHERE id = p_donation_id;
+
+        -- Update campaign current_amount
+        UPDATE campaigns
+        SET current_amount = current_amount + v_amount
+        WHERE id = v_campaign_id;
+    END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
