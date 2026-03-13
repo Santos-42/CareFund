@@ -5,7 +5,7 @@ import CheckoutForm from '@/components/CheckoutForm';
 import ShareButtons from '@/components/ShareButtons';
 import DonationsLedger from '@/components/DonationsLedger';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 5;
 
 export default async function CampaignPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

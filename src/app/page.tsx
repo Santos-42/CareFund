@@ -3,7 +3,7 @@ import { Campaign } from '@/types/database';
 import Link from 'next/link';
 import { Heart } from 'lucide-react';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 5;
 
 export default async function HomePage() {
   const { data: campaigns, error } = await supabase
