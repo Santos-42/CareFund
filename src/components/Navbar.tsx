@@ -30,7 +30,7 @@ export function Navbar() {
                <span className="text-xs font-semibold text-teal-700 dark:text-teal-400">Live on Mayar Sandbox</span>
             </div>
             <a 
-              href="mailto:riosantosomksj@gmail.com?subject=Kerjasama%20Memulai%20Campaign%20Baru" 
+              href="mailto:placeholder@gmail.com?subject=Kerjasama%20Memulai%20Campaign%20Baru" 
               className="px-5 py-2.5 bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-950 font-bold rounded-lg transition-colors text-sm"
             >
               Mulai Campaign

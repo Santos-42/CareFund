@@ -19,13 +19,58 @@ export default async function HomePage() {
     <main className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight transition-colors">
-            Transparansi Penuh untuk Setiap Niat Baik.
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto transition-colors">
-            Platform penggalangan dana di mana setiap rupiah yang masuk dicatat secara publik dan terverifikasi secara real-time.
-          </p>
+        <div className="flex flex-col gap-8 lg:flex-row items-center py-12 md:py-20 mb-10">
+          <div className="flex flex-col gap-6 lg:w-1/2">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-slate-900 dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight transition-colors">
+                Transparansi Penuh untuk Setiap <span className="text-primary">Niat Baik.</span>
+              </h1>
+              <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed transition-colors">
+                Platform penggalangan dana di mana setiap rupiah yang masuk dicatat secara publik dan terverifikasi secara real-time.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="mailto:placeholder@gmail.com?subject=Kerjasama%20Memulai%20Campaign%20Baru" 
+                className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-primary/30"
+              >
+                Mulai Campaign
+              </a>
+              <button className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold transition-all hover:bg-slate-50 dark:hover:bg-slate-750">
+                Pelajari Lebih Lanjut
+              </button>
+            </div>
+          </div>
+          
+          <div className="w-full lg:w-1/2 relative group">
+            <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
+            <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-primary/40 to-primary/10 rounded-2xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-2xl flex items-center justify-center">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay opacity-30"></div>
+              <Heart className="w-24 h-24 text-white/50 dark:text-slate-900/20 fill-current relative z-10" />
+              
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8 z-20">
+                <div className="flex items-center gap-4 bg-white/10 dark:bg-slate-900/40 backdrop-blur-md p-4 rounded-xl border border-white/20 dark:border-slate-600/30 w-full transition-colors">
+                  <div className="flex -space-x-3">
+                    <div className="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800 bg-primary flex items-center justify-center text-xs font-bold text-white">1</div>
+                    <div className="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800 bg-teal-500 flex items-center justify-center text-xs font-bold text-white">2</div>
+                    <div className="w-10 h-10 rounded-full border-2 border-white dark:border-slate-800 bg-slate-500 flex items-center justify-center text-xs font-bold text-white">3</div>
+                  </div>
+                  <p className="text-white text-sm font-medium">Bergabung bersama para donatur minggu ini</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Campaign Section Header */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4">
+          <div className="flex flex-col gap-2">
+            <span className="text-primary font-bold tracking-widest uppercase text-xs">Pilih Kebaikanmu</span>
+            <h2 className="text-slate-900 dark:text-white text-3xl font-bold tracking-tight transition-colors">Campaign Terkini</h2>
+          </div>
+          <Link href="/campaigns" className="text-primary font-semibold text-sm flex items-center gap-1 hover:underline">
+            Lihat Semua <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
         </div>
 
         {/* Grid Campaign */}
@@ -33,40 +78,43 @@ export default async function HomePage() {
           {campaigns?.map((campaign: Campaign) => {
             const progress = (campaign.current_amount / campaign.target_amount) * 100;
             return (
-              <div key={campaign.id} className="bg-white dark:bg-brand-card border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden hover:border-teal-500/50 transition-all hover:shadow-2xl hover:shadow-teal-500/10 flex flex-col h-full group">
+              <div key={campaign.id} className="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-slate-700/40 hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-700 h-full">
                 {/* Fallback image area */}
-                <div className="h-48 w-full bg-gradient-to-br from-slate-100 to-slate-200 dark:from-brand-navy dark:to-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-center relative overflow-hidden transition-colors">
-                   <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay dark:mix-blend-overlay"></div>
-                   <div className="h-14 w-14 rounded-full bg-white/60 dark:bg-slate-900/60 backdrop-blur-sm flex items-center justify-center border border-slate-200/50 dark:border-slate-700/50 group-hover:scale-110 transition-transform duration-500">
-                     <Heart className="text-teal-500 w-6 h-6 fill-teal-500/20" />
-                   </div>
+                <div className="relative w-full aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-orange-400/30 dark:to-orange-500/20 group-hover:scale-110 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
+                    <Heart className="w-16 h-16 text-primary fill-primary/20" />
+                  </div>
+                  
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded shadow-sm">
+                      Kemanusiaan
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors line-clamp-2">{campaign.title}</h3>
+                <div className="p-6 flex flex-col flex-grow gap-4">
+                  <h3 className="text-slate-900 dark:text-white text-xl font-bold leading-tight line-clamp-2 transition-colors">{campaign.title}</h3>
                   
                   <div className="space-y-4 mt-auto">
-                    <div className="flex justify-between items-end">
-                      <div className="space-y-1">
-                        <p className="text-xs font-medium text-slate-500 dark:text-slate-500 uppercase tracking-wider">Terkumpul</p>
-                        <p className="text-lg font-bold text-slate-900 dark:text-white transition-colors">
-                          Rp {new Intl.NumberFormat('id-ID').format(campaign.current_amount)}
-                        </p>
-                      </div>
-                    </div>
-                    
                     <div className="space-y-2">
-                      <div className="h-2 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden transition-colors">
+                      <div className="flex justify-between text-xs font-medium">
+                        <span className="text-slate-500 dark:text-slate-400 transition-colors">Terkumpul: <span className="text-slate-900 dark:text-white">Rp {new Intl.NumberFormat('id-ID').format(campaign.current_amount)}</span></span>
+                        <span className="text-primary font-bold">{Math.round(progress)}%</span>
+                      </div>
+                      
+                      <div className="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden transition-colors">
                         <div 
-                          className="h-full bg-teal-500 rounded-full transition-all duration-1000 ease-out" 
+                          className="bg-primary h-full rounded-full transition-all duration-1000 ease-out" 
                           style={{ width: `${Math.min(Math.round(progress), 100)}%` }} 
                         />
                       </div>
+                      <p className="text-slate-400 dark:text-slate-500 text-xs text-right transition-colors">Target: Rp {new Intl.NumberFormat('id-ID').format(campaign.target_amount)}</p>
                     </div>
                     
-                    <Link href={`/campaign/${campaign.id}`} className="block pt-4">
-                       <button className="w-full bg-slate-900 dark:bg-white hover:bg-slate-800 dark:hover:bg-slate-200 text-white dark:text-slate-950 font-bold py-3 rounded-xl transition-all active:scale-[0.98]">
-                         Lihat Detail
+                    <Link href={`/campaign/${campaign.id}`} className="block">
+                       <button className="mt-2 w-full flex items-center justify-center gap-2 rounded-xl h-11 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold transition-colors hover:bg-primary hover:text-white group-hover:bg-primary group-hover:text-white dark:hover:bg-white dark:hover:text-primary dark:group-hover:bg-white dark:group-hover:text-primary">
+                         Lihat Detail <span className="material-symbols-outlined text-sm">visibility</span>
                        </button>
                     </Link>
                   </div>
@@ -77,13 +125,43 @@ export default async function HomePage() {
         </div>
         
         {(!campaigns || campaigns.length === 0) && (
-          <div className="text-center py-24 bg-slate-100/50 dark:bg-slate-900/30 rounded-3xl border border-slate-200 dark:border-slate-800/50 border-dashed transition-colors">
-            <div className="h-16 w-16 mx-auto bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 transition-colors">
-              <Heart className="w-8 h-8 text-slate-400 dark:text-slate-500" />
+          <div className="text-center py-24 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 border-dashed transition-colors mt-8">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 mx-auto flex items-center justify-center text-primary mb-4 transition-colors">
+              <span className="material-symbols-outlined text-4xl">favorite border</span>
             </div>
             <p className="text-slate-600 dark:text-slate-400 text-lg font-medium transition-colors">Belum ada campaign aktif saat ini.</p>
           </div>
         )}
+
+        {/* Why CareFund Section */}
+        <section className="mt-24 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            <div className="flex flex-col items-center gap-4">
+               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-primary/20 scale-0 group-hover:scale-100 transition-transform rounded-2xl duration-300"></div>
+                 <span className="material-symbols-outlined text-4xl relative z-10">verified_user</span>
+               </div>
+               <h4 className="text-xl font-bold text-slate-900 dark:text-white transition-colors">Terverifikasi</h4>
+               <p className="text-slate-500 dark:text-slate-400 transition-colors">Setiap campaign melalui proses kurasi ketat untuk menjamin validitas.</p>
+            </div>
+            <div className="flex flex-col items-center gap-4">
+               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-primary/20 scale-0 group-hover:scale-100 transition-transform rounded-2xl duration-300"></div>
+                 <span className="material-symbols-outlined text-4xl relative z-10">visibility</span>
+               </div>
+               <h4 className="text-xl font-bold text-slate-900 dark:text-white transition-colors">Transparan</h4>
+               <p className="text-slate-500 dark:text-slate-400 transition-colors">Arus kas tercatat publik, dapat dipantau siapa saja kapan saja.</p>
+            </div>
+            <div className="flex flex-col items-center gap-4">
+               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary relative overflow-hidden group">
+                 <div className="absolute inset-0 bg-primary/20 scale-0 group-hover:scale-100 transition-transform rounded-2xl duration-300"></div>
+                 <span className="material-symbols-outlined text-4xl relative z-10">speed</span>
+               </div>
+               <h4 className="text-xl font-bold text-slate-900 dark:text-white transition-colors">Real-time</h4>
+               <p className="text-slate-500 dark:text-slate-400 transition-colors">Donasi langsung tercatat dan masuk ke wallet campaign secara instan.</p>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

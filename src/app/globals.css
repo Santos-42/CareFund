@@ -50,6 +50,10 @@
   --color-brand-teal: #40b3a2;
   --color-brand-dark: #0f172a;
   --color-brand-card: #1e293b;
+
+  --color-primary: #ec5b13;
+  --color-background-light: #f8f6f6;
+  --color-background-dark: #221610;
 }
 
 :root {

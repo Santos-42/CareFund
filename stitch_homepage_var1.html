@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec5b13",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221610",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 md:px-10 lg:px-40 py-4">
+<div class="max-w-[1200px] mx-auto flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold" style="font-variation-settings: 'FILL' 1">favorite</span>
+<h2 class="text-slate-900 dark:text-white text-xl font-extrabold tracking-tight">CareFund</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4 md:gap-8">
+<div class="hidden md:flex items-center">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold border border-primary/20">
+                                Live on Mayar Sandbox
+                            </span>
+</div>
+<a class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-xl h-10 px-6 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20" href="mailto:contact@carefund.com">
+                            Mulai Campaign
+                        </a>
+<div class="bg-slate-200 dark:bg-slate-700 aspect-square rounded-full size-10 border border-slate-300 dark:border-slate-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<div class="px-4 md:px-10 lg:px-40 py-12 md:py-20 max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-8 lg:flex-row items-center">
+<div class="flex flex-col gap-6 lg:w-1/2">
+<div class="flex flex-col gap-4">
+<h1 class="text-slate-900 dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
+                                    Transparansi Penuh untuk Setiap <span class="text-primary">Niat Baik.</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed">
+                                    Platform penggalangan dana di mana setiap rupiah yang masuk dicatat secara publik dan terverifikasi secara real-time.
+                                </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-primary text-white text-base font-bold transition-all hover:translate-y-[-2px] hover:shadow-xl hover:shadow-primary/30" href="mailto:contact@carefund.com">
+                                    Mulai Campaign
+                                </a>
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-xl h-14 px-8 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-base font-bold transition-all hover:bg-slate-50 dark:hover:bg-slate-750">
+                                    Pelajari Lebih Lanjut
+                                </button>
+</div>
+</div>
+<div class="w-full lg:w-1/2 relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
+<div class="relative w-full aspect-[4/3] bg-gradient-to-br from-primary/40 to-primary/10 rounded-2xl overflow-hidden border border-white/20 shadow-2xl" data-alt="Ilustrasi orang-orang saling membantu dengan transparan">
+<img alt="Charity image" class="w-full h-full object-cover mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHaP3AlAs1CfRu3gpmWHYbSz-g3h0cKgp5XP8K65V1QgtVRjLBGDVtUNrXDd9xsHcmqXn_qOuKxYo21mdej-uBppfeAd8GhmSFd9I2az6CV2PEVCNZjn5No0JLbXKtfsUTQ71DHb0IOH0bKh9q6JBF9039DUhvmG-yGmTutbt4zO2Y6bfht7NGfcKGAFMf3K4HzA9qDjl1rMFzFw2gEPsQ_b9sBArb5i30kuPjlOokFJ2F1S1RhmhopzYTEwIvC4zx8MDA5PbmSHY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8">
+<div class="flex items-center gap-4 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 w-full">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-500"></div>
+</div>
+<p class="text-white text-sm font-medium">Bergabung dengan 1,240+ donatur minggu ini</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Campaign Section -->
+<section class="bg-white dark:bg-slate-900/50 py-16 px-4 md:px-10 lg:px-40">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex items-end justify-between mb-10">
+<div class="flex flex-col gap-2">
+<span class="text-primary font-bold tracking-widest uppercase text-xs">Pilih Kebaikanmu</span>
+<h2 class="text-slate-900 dark:text-white text-3xl font-bold tracking-tight">Campaign Terkini</h2>
+</div>
+<a class="text-primary font-semibold text-sm flex items-center gap-1 hover:underline" href="#">
+                                Lihat Semua <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-orange-400/30 group-hover:scale-110 transition-transform duration-500" data-alt="Foto renovasi sekolah di pedesaan"></div>
+<img alt="Sekolah" class="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPSP7I04mvjWIdFaJycf8gW8zWHxr1CAx66LnfLdhfOB0R9AHLBZv_W6f1F4k-bWySR5tzqe5ljln1i1aHf2gVKtUFeKoSz02sXtvbC1oypHCl9Hz7kPepOEkWWbxdU5U02lRi4mLscZIIwAFd5R9zWH7nY_KnyJ7aGA7omQRuD1g3CsUtjLocsnVhfSkzSIynzJ2e5icgAV5WQ-MKil0YEr1bGWeEHenlW5_kGJcCaOh3eJH2EnAYqjSUl4QL_Tp5L0Ew5Epzimo"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded">Pendidikan</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight line-clamp-2">Bantu Renovasi Sekolah Dasar di Pelosok Desa</h3>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-500 dark:text-slate-400">Terkumpul: <span class="text-slate-900 dark:text-white">Rp 15.000.000</span></span>
+<span class="text-primary font-bold">30%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[30%]"></div>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs text-right">Target: Rp 50.000.000</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 rounded-xl h-11 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold transition-colors hover:bg-primary hover:text-white group-hover:bg-primary group-hover:text-white">
+                                        Lihat Detail <span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-rose-400/30 group-hover:scale-110 transition-transform duration-500" data-alt="Lansia menerima bantuan paket pangan"></div>
+<img alt="Pangan" class="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1rfExwylzi0dykCN-rSUypDiDzXo5W40qhWfLlR0oA7aFCPqHmRZZRzON3df9cmj-a2nalUOZQjOxkI8QV0vSG6RwwxVhTbw06qr1OhEW_a0JYWs5HC4TOyOmZYQlG_NWJ-qSZOk0Px1Ozu_kLliY3-y1uTLluP6M1yjdt4e-Ldg9NHXQPQJlpj-frDBh5JOwIouxTYRTRpo4ABFiAipFjkwNYEOmlMGEDRprT9oy2EaCVWHIre3ZWEbQF4vF1bruUSyt2WhyweY"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded">Kemanusiaan</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight line-clamp-2">Pangan untuk Lansia di Panti Jompo</h3>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-500 dark:text-slate-400">Terkumpul: <span class="text-slate-900 dark:text-white">Rp 8.500.000</span></span>
+<span class="text-primary font-bold">85%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[85%]"></div>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs text-right">Target: Rp 10.000.000</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 rounded-xl h-11 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold transition-colors hover:bg-primary hover:text-white group-hover:bg-primary group-hover:text-white">
+                                        Lihat Detail <span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700">
+<div class="relative w-full aspect-video overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-blue-400/30 group-hover:scale-110 transition-transform duration-500" data-alt="Alat kesehatan di puskesmas desa"></div>
+<img alt="Kesehatan" class="w-full h-full object-cover mix-blend-multiply opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB5RKvSew-lkN6OlE6Bi-UorGwlQCn9kbr3fcAf9Dwrd8ckNOdlOMFK30o3EAYV2-K8cQ5CGCzNDl-E2J-2FaG6YykPvV9TVzZvTp1umUB-D4w3Reso7lJg4CV3DtnrbQveTqIRbaaja8e17Il3F_I503vnE7KID6AvMEJnB-SHuMGk0oW8GHRm_-qj054LT5oN7S191r_hlHef0uG70MMfDWFc7VNm2GhRUwiE0Yq0hc-7XU-M7nydO_MGUNxGv45Z9NMW4l-_IA"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded">Kesehatan</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<h3 class="text-slate-900 dark:text-white text-xl font-bold leading-tight line-clamp-2">Pengadaan Alat Kesehatan Puskesmas</h3>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-medium">
+<span class="text-slate-500 dark:text-slate-400">Terkumpul: <span class="text-slate-900 dark:text-white">Rp 22.000.000</span></span>
+<span class="text-primary font-bold">73%</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full w-[73%]"></div>
+</div>
+<p class="text-slate-400 dark:text-slate-500 text-xs text-right">Target: Rp 30.000.000</p>
+</div>
+<button class="mt-2 w-full flex items-center justify-center gap-2 rounded-xl h-11 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-white text-sm font-bold transition-colors hover:bg-primary hover:text-white group-hover:bg-primary group-hover:text-white">
+                                        Lihat Detail <span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why CareFund Section -->
+<section class="py-20 px-4 md:px-10 lg:px-40 max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">verified_user</span>
+</div>
+<h4 class="text-xl font-bold">Terverifikasi</h4>
+<p class="text-slate-500 dark:text-slate-400">Setiap campaign melalui proses kurasi ketat untuk menjamin validitas.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">visibility</span>
+</div>
+<h4 class="text-xl font-bold">Transparan</h4>
+<p class="text-slate-500 dark:text-slate-400">Arus kas tercatat publik, dapat dipantau siapa saja kapan saja.</p>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-4xl">speed</span>
+</div>
+<h4 class="text-xl font-bold">Real-time</h4>
+<p class="text-slate-500 dark:text-slate-400">Donasi langsung tercatat dan masuk ke wallet campaign secara instan.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark py-12 px-4 md:px-10 lg:px-40">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-2 text-primary mb-2">
+<span class="material-symbols-outlined text-2xl font-bold" style="font-variation-settings: 'FILL' 1">favorite</span>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold">CareFund</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs">
+                                Platform donasi berbasis transparansi untuk masa depan filantropi Indonesia yang lebih baik.
+                            </p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-primary transition-colors" href="https://github.com">
+<svg class="w-6 h-6 fill-currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+<p class="text-slate-400 text-xs font-medium">
+                                © 2026 CareFund. Dibangun untuk Vibecoding Competition Mayar 2026.
+                            </p>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
