@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Heart } from 'lucide-react';
+import Image from 'next/image';
 import { ThemeToggle } from './ThemeToggle';
 
 export function Navbar() {
@@ -8,10 +8,17 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center space-x-3">
-            <div className="relative h-10 w-10 bg-teal-500 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/20">
-              <Heart className="text-white dark:text-slate-950 w-6 h-6 fill-current" />
-            </div>
-            <Link href="/">
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative h-10 w-10 flex items-center justify-center transition-transform group-hover:scale-105">
+                <Image 
+                  src="/logo.png" 
+                  alt="CareFund Logo" 
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 40px, 40px"
+                  priority
+                />
+              </div>
               <span className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight transition-colors">CareFund</span>
             </Link>
           </div>
