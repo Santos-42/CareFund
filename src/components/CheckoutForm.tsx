@@ -5,14 +5,14 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 export default function CheckoutForm({ campaignId }: { campaignId: string }) {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [amount, setAmount] = useState('');
   const [donorName, setDonorName] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setIsLoading(true);
     e.preventDefault();
-    setLoading(true);
     setError(null);
 
     try {
@@ -36,13 +36,14 @@ export default function CheckoutForm({ campaignId }: { campaignId: string }) {
       
       // Redirect to Mayar checkout
       if (data.checkoutUrl) {
+        setIsLoading(false);
         window.location.href = data.checkoutUrl;
       } else {
         throw new Error('Tidak mendapatkan link pembayaran dari Mayar');
       }
     } catch (err: any) {
       setError(err.message);
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -92,11 +93,23 @@ export default function CheckoutForm({ campaignId }: { campaignId: string }) {
           
           <button 
             type="submit" 
-            disabled={loading}
+            disabled={isLoading}
             className="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed mt-4"
           >
-            <span>{loading ? 'Memproses...' : 'Bayar dengan Mayar'}</span>
-            {!loading && <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>}
+            {isLoading ? (
+              <>
+                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>Menghubungkan ke Mayar...</span>
+              </>
+            ) : (
+              <>
+                <span>Bayar dengan Mayar</span>
+                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </>
+            )}
           </button>
         </form>
 
