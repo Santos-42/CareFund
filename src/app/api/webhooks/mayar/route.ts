@@ -24,6 +24,7 @@ export async function POST(req: Request) {
     }
 
     const payload = JSON.parse(rawBody);
+    console.log('--- WEBHOOK PAYLOAD MENTAH ---', JSON.stringify(payload, null, 2));
 
     // Mayar webhook structure: payload.event is the event name, payload.data is the transaction object
     // Payment success events usually are payment.received, payment.success, or similar.

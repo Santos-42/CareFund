@@ -101,8 +101,6 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
             <div className="prose prose-slate dark:prose-invert max-w-none text-slate-600 dark:text-slate-400 leading-relaxed space-y-4 transition-colors">
               <p className="whitespace-pre-wrap">{campaign.description}</p>
             </div>
-            
-            <ShareButtons title={campaign.title} />
           </section>
 
           {/* Public Ledger */}
@@ -164,7 +162,10 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
 
         {/* Right Side: Sticky Checkout */}
         <div className="lg:col-span-1">
-          <CheckoutForm campaignId={campaign.id} />
+          <div className="sticky top-24 space-y-6">
+            <CheckoutForm campaignId={campaign.id} />
+            <ShareButtons title={campaign.title} />
+          </div>
         </div>
       </div>
     </main>

@@ -47,8 +47,7 @@ export default function CheckoutForm({ campaignId }: { campaignId: string }) {
   };
 
   return (
-    <div className="sticky top-24 space-y-6">
-      <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-xl shadow-slate-200/50 dark:shadow-none transition-colors duration-300">
+    <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-8 shadow-xl shadow-slate-200/50 dark:shadow-none transition-colors duration-300">
         <div className="mb-6">
           <h4 className="text-xl font-bold mb-2 text-slate-900 dark:text-white transition-colors">Ayo Berdonasi</h4>
           <p className="text-slate-500 dark:text-slate-400 text-sm transition-colors mb-4">Setiap rupiah yang Anda donasikan berarti besar bagi mereka.</p>
@@ -73,8 +72,8 @@ export default function CheckoutForm({ campaignId }: { campaignId: string }) {
           </div>
           
           <div className="grid grid-cols-2 gap-2 mb-4">
-            <button type="button" onClick={() => setAmount('50000')} className="py-2 text-sm font-semibold border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary transition-all text-slate-700 dark:text-slate-300">Rp 50.000</button>
-            <button type="button" onClick={() => setAmount('100000')} className="py-2 text-sm font-semibold border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary transition-all text-slate-700 dark:text-slate-300">Rp 100.000</button>
+            <button type="button" onClick={() => setAmount('50000')} className="py-2 text-sm font-semibold border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary dark:hover:text-white dark:hover:border-white transition-all text-slate-700 dark:text-slate-300">Rp 50.000</button>
+            <button type="button" onClick={() => setAmount('100000')} className="py-2 text-sm font-semibold border border-slate-200 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary dark:hover:text-white dark:hover:border-white transition-all text-slate-700 dark:text-slate-300">Rp 100.000</button>
           </div>
           
           <div>
@@ -105,23 +104,6 @@ export default function CheckoutForm({ campaignId }: { campaignId: string }) {
           <span className="material-symbols-outlined text-2xl">verified_user</span>
           <p className="text-[11px] leading-tight">Sistem pembayaran aman & terverifikasi oleh OJK melalui mitra kami.</p>
         </div>
-      </div>
-
-      {/* Secondary Widget */}
-      <div className="bg-primary/5 dark:bg-primary/10 rounded-2xl p-6 border border-primary/10 transition-colors">
-        <h5 className="font-bold text-primary mb-2 flex items-center gap-2">
-          <span className="material-symbols-outlined text-sm">share</span>
-          Bantu Sebarkan
-        </h5>
-        <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 transition-colors">Satu share dari Anda sangat berarti bagi mereka yang membutuhkan.</p>
-        <div className="flex gap-2">
-          <button className="flex-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center justify-center group">
-            <span className="material-symbols-outlined text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors">link</span>
-          </button>
-          <button className="flex-1 bg-[#1877F2] text-white p-2 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center font-bold text-xs">Facebook</button>
-          <button className="flex-1 bg-[#25D366] text-white p-2 rounded-lg hover:opacity-90 transition-opacity flex items-center justify-center font-bold text-xs">WhatsApp</button>
-        </div>
-      </div>
     </div>
   );
 }

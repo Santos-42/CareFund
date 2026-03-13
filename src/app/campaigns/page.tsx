@@ -36,7 +36,7 @@ export default async function CampaignsPage() {
               <div key={campaign.id} className="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-slate-700/40 hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-700 h-full">
                 {/* Fallback image area */}
                 <div className="relative w-full aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-orange-400/30 dark:to-orange-500/20 group-hover:scale-110 transition-transform duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-teal-400/30 dark:to-teal-500/20 group-hover:scale-110 transition-transform duration-500"></div>
                   <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
                     <Heart className="w-16 h-16 text-primary fill-primary/20" />
                   </div>

@@ -13,8 +13,23 @@ export default function ShareButtons({ title }: { title: string }) {
 
   const handleCopy = async () => {
     try {
-      if (url) {
-        await navigator.clipboard.writeText(url);
+      if (typeof window !== 'undefined' && url) {
+        if (navigator?.clipboard?.writeText) {
+            await navigator.clipboard.writeText(url);
+        } else {
+            // Fallback for older browsers
+            const textArea = document.createElement("textarea");
+            textArea.value = url;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+        }
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }
@@ -24,15 +39,19 @@ export default function ShareButtons({ title }: { title: string }) {
   };
 
   const shareFacebook = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+    if (typeof window !== 'undefined' && url) {
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    }
   };
 
   const shareWhatsApp = () => {
-    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} - ${url}`)}`, '_blank');
+    if (typeof window !== 'undefined' && url) {
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(`${title} - ${url}`)}`, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm transition-colors mt-8">
+    <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 shadow-sm transition-colors">
       <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
         <Share2 className="w-5 h-5 text-primary" />
         Bantu Sebarkan

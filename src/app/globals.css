@@ -51,19 +51,21 @@
   --color-brand-dark: #0f172a;
   --color-brand-card: #1e293b;
 
-  --color-primary: #ec5b13;
-  --color-background-light: #f8f6f6;
-  --color-background-dark: #221610;
+  --color-primary: #3aa68c;
+  --color-background-light: #ffffff;
+  --color-background-dark: #1e3a5f;
 }
 
 :root {
+  /* White Background */
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  /* Teal / Green Primary (#3aa68c) */
+  --primary: oklch(0.669 0.125 168.0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -92,14 +94,17 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  /* Navy / Blue Dark Background (#1e3a5f) */
+  --background: oklch(0.334 0.082 260.0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  /* Card slightly lighter than navy */
+  --card: oklch(0.384 0.082 260.0);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.384 0.082 260.0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
+  /* Teal / Green Primary (#3aa68c) */
+  --primary: oklch(0.669 0.125 168.0);
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
