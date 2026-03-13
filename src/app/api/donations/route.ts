@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     const NEXT_PUBLIC_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
     // 1. Create Single Payment Request on Mayar
-    const mayarRes = await fetch('https://api.mayar.id/hl/v1/payment/create', {
+    const mayarRes = await fetch('https://api.mayar.club/hl/v1/payment/create', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${MAYAR_API_KEY}`,
