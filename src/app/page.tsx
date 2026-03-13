@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { Campaign } from '@/types/database';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 
 export const revalidate = 5;
@@ -47,9 +48,14 @@ export default async function HomePage() {
           
           <div className="w-full lg:w-1/2 relative group">
             <div className="absolute -inset-4 bg-primary/20 rounded-3xl blur-2xl group-hover:bg-primary/30 transition-all duration-500"></div>
-            <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-primary/40 to-primary/10 rounded-2xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-2xl flex items-center justify-center">
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay opacity-30"></div>
-              <Heart className="w-24 h-24 text-white/50 dark:text-slate-900/20 fill-current relative z-10" />
+            <div className="relative w-full aspect-[4/3] bg-slate-100 dark:bg-slate-900 rounded-2xl overflow-hidden border border-white/20 dark:border-slate-700/50 shadow-2xl flex items-center justify-center">
+              <Image 
+                src="https://plus.unsplash.com/premium_photo-1661605574121-fd0cc6199b52?q=80&w=1201&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="CareFund Heroes"
+                fill
+                className="object-cover"
+                priority
+              />
               
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-8 z-20">
                 <div className="flex items-center gap-4 bg-white/10 dark:bg-slate-900/40 backdrop-blur-md p-4 rounded-xl border border-white/20 dark:border-slate-600/30 w-full transition-colors">
@@ -84,10 +90,21 @@ export default async function HomePage() {
               <div key={campaign.id} className="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-slate-700/40 hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-700 h-full">
                 {/* Fallback image area */}
                 <div className="relative w-full aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-teal-400/30 dark:to-teal-500/20 group-hover:scale-110 transition-transform duration-500"></div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
-                    <Heart className="w-16 h-16 text-primary fill-primary/20" />
-                  </div>
+                  {campaign.image_url ? (
+                    <Image 
+                      src={campaign.image_url}
+                      alt={campaign.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-teal-400/30 dark:to-teal-500/20 group-hover:scale-110 transition-transform duration-500"></div>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
+                        <Heart className="w-16 h-16 text-primary fill-primary/20" />
+                      </div>
+                    </>
+                  )}
                   
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded shadow-sm">

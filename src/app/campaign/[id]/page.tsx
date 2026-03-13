@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import CheckoutForm from '@/components/CheckoutForm';
 import ShareButtons from '@/components/ShareButtons';
 import DonationsLedger from '@/components/DonationsLedger';
@@ -45,12 +46,22 @@ export default async function CampaignPage({ params }: { params: Promise<{ id: s
 
           {/* Hero Section */}
           <div className="rounded-2xl overflow-hidden relative h-[400px]">
-             {/* Fallback pattern */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-slate-200/50 dark:from-primary/20 dark:to-brand-navy/30 mix-blend-overlay dark:mix-blend-overlay transition-colors"></div>
-             
-             <div className="absolute inset-0 flex items-center justify-center -z-10 bg-slate-100 dark:bg-slate-800 transition-colors">
-               <span className="text-6xl opacity-50">🤝</span>
-             </div>
+             {campaign.image_url ? (
+               <Image 
+                 src={campaign.image_url}
+                 alt={campaign.title}
+                 fill
+                 className="object-cover"
+                 priority
+               />
+             ) : (
+               <>
+                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-slate-200/50 dark:from-primary/20 dark:to-brand-navy/30 mix-blend-overlay dark:mix-blend-overlay transition-colors"></div>
+                 <div className="absolute inset-0 flex items-center justify-center -z-10 bg-slate-100 dark:bg-slate-800 transition-colors">
+                   <span className="text-6xl opacity-50">🤝</span>
+                 </div>
+               </>
+             )}
              
              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 sm:p-12 z-10 transition-colors pb-20">
                <span className="bg-primary text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full w-fit mb-4 shadow-sm">Kemanusiaan</span>

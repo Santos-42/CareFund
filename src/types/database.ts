@@ -4,6 +4,7 @@ export interface Campaign {
   description: string | null;
   target_amount: number;
   current_amount: number;
+  image_url: string | null;
   created_at: string;
 }
 

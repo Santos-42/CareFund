@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/supabase';
 import { Campaign } from '@/types/database';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Heart } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -36,10 +37,21 @@ export default async function CampaignsPage() {
               <div key={campaign.id} className="group flex flex-col bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl dark:hover:shadow-slate-700/40 hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-700 h-full">
                 {/* Fallback image area */}
                 <div className="relative w-full aspect-video overflow-hidden bg-slate-100 dark:bg-slate-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-teal-400/30 dark:to-teal-500/20 group-hover:scale-110 transition-transform duration-500"></div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
-                    <Heart className="w-16 h-16 text-primary fill-primary/20" />
-                  </div>
+                  {campaign.image_url ? (
+                    <Image 
+                      src={campaign.image_url}
+                      alt={campaign.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  ) : (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-teal-400/30 dark:to-teal-500/20 group-hover:scale-110 transition-transform duration-500"></div>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-50 mix-blend-multiply dark:mix-blend-screen">
+                        <Heart className="w-16 h-16 text-primary fill-primary/20" />
+                      </div>
+                    </>
+                  )}
                   
                   <div className="absolute top-4 left-4">
                     <span className="bg-primary text-white text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded shadow-sm">
