@@ -5,6 +5,7 @@ CREATE TABLE campaigns (
     description TEXT,
     target_amount NUMERIC NOT NULL,
     current_amount NUMERIC DEFAULT 0,
+    image_url TEXT NOT NULL,
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 

@@ -5,8 +5,52 @@ import Image from 'next/image';
 import CheckoutForm from '@/components/CheckoutForm';
 import ShareButtons from '@/components/ShareButtons';
 import DonationsLedger from '@/components/DonationsLedger';
+import type { Metadata } from 'next';
 
 export const revalidate = 5;
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  
+  // Perhatikan: Kita wajib melakukan select 'image_url' di sini
+  const { data: campaign } = await supabase
+    .from('campaigns')
+    .select('title, description, image_url')
+    .eq('id', id)
+    .single();
+
+  if (!campaign) {
+    return { title: 'Campaign Tidak Ditemukan' };
+  }
+
+  // Logika Fallback: Gunakan gambar kampanye, atau gunakan logo jika kosong
+  const ogImage = campaign.image_url ? campaign.image_url : '/logo.png';
+
+  return {
+    title: `${campaign.title} | CareFund`,
+    description: campaign.description || 'Mari berdonasi melalui CareFund.',
+    openGraph: {
+      title: campaign.title,
+      description: campaign.description || 'Mari berdonasi melalui CareFund.',
+      url: `https://care-fund-amber.vercel.app/campaign/${id}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1200, // Dimensi standar yang disukai WhatsApp dan Twitter
+          height: 630,
+          alt: campaign.title,
+        }
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: campaign.title,
+      description: campaign.description || 'Mari berdonasi melalui CareFund.',
+      images: [ogImage],
+    },
+  };
+}
 
 export default async function CampaignPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
